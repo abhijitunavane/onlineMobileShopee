@@ -1,0 +1,8 @@
+sir, our site is basically based on mobile phone shopping.
+
+it includes mobile specs, price, and also includes ordering of phones too from our site only.
+
+we will ask the user to login and signup to order phones.
+
+we will be using html, css, and javascript.
+
