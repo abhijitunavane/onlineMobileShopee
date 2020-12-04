@@ -83,16 +83,19 @@ if (section.id == 'signup')
 			flag = 1;
 			setSuccessFor(password2);
 		}
-		if (flag){
-			alert("submitted");
-			let object = {
-				name	: nameValue,
-				username: usernameValue,
-				email	: emailValue,
-				password: passwordValue
-			};
-			objPeople.push(object);
-			console.log(objPeople);
+		if (usernameValue && nameValue && emailValue && passwordValue && password2Value ) {
+			setTimeout(()=>{
+				window.location.href = 'login.html';
+			}, 300 );	
+			// let object = {
+			// 	name	: nameValue,
+			// 	username: usernameValue,
+			// 	email	: emailValue,
+			// 	password: passwordValue
+			// };
+			// objPeople.push(object);
+			// console.log(objPeople);
+				
 		}
 	};
 
@@ -114,30 +117,30 @@ else if( section.id == 'login' ){
 	function getInfo(){
 		const usernameValue = username.value;
 		const passwordValue = password.value;
-		let flag = 0;
 				
 		if(usernameValue === '') {
 			setErrorFor(username, 'Username cannot be blank');
-			flag = 0;
 		} else {
 			setSuccessFor(username);
-			flag = 1;
 		}
 		if(passwordValue === '') {
 			setErrorFor(password, 'Password cannot be blank');
-			flag =0;
 		} else {
-			flag = 1;
 			setSuccessFor(password);
 		}
-		if (flag) {
-			for(i=0; i < objPeople.length; i++){
-				if ((usernameValue === objPeople[i].username || usernameValue === objPeople[i].email) && passwordValue === objPeople[i].password ){
-					console.log(usernameValue + ' is logged in!' + ' with password as ' + passwordValue);
-					return;
-				}
-				console.log('wrong username or password!');
-			}
+		if (usernameValue && passwordValue) {
+			setTimeout(()=>{
+				window.location.href = 'mobiles.html';
+			}, 300);	
+			
+
+			// for(i=0; i < objPeople.length; i++){
+			// 	if ((usernameValue === objPeople[i].username || usernameValue === objPeople[i].email) && passwordValue === objPeople[i].password ){
+			// 		console.log(usernameValue + ' is logged in!' + ' with password as ' + passwordValue);
+			// 		return;
+			// 	}
+			// 	console.log('wrong username or password!');
+			// }
 		}
 	};
 }
@@ -153,6 +156,13 @@ else if ( section.id =="separate-mobiles-section") {
 		}
 	}
 
+}
+else if ( section.id =="about") {
+	var about = document.getElementById('about-heading-downward');
+
+	about.addEventListener('click', ()=> {
+		window.location.href = '#about-info';
+	});
 }
 	// login completed
 
