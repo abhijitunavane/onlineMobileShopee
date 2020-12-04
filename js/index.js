@@ -141,6 +141,19 @@ else if( section.id == 'login' ){
 		}
 	};
 }
+else if ( section.id =="separate-mobiles-section") {
+	var productImg = document.getElementById("product-img");
+	var smallImg   = document.getElementsByClassName("small-img");
+	
+	
+	for(let i =0;i <smallImg.length; i++){
+		smallImg[i].onclick = function() 
+		{
+			productImg.src = smallImg[i].src;
+		}
+	}
+
+}
 	// login completed
 
 function setErrorFor( input, message ) {
